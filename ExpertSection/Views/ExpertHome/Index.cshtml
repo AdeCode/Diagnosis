@@ -1,0 +1,817 @@
+﻿@model IEnumerable<diagnosis.Models.Expert>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <!-- Title and other stuffs -->
+  <title>Register admin</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="author" content="">
+  <!--stylesheet-->
+    <link href="~/Content/style/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/style/font-awesome.css" rel="stylesheet" />
+    <link href="~/Content/style/jquery-ui-1.9.2.custom.min.css" rel="stylesheet" />
+    <link href="~/Content/style/fullcalendar.css" rel="stylesheet" />
+    <link href="~/Content/style/rateit.css" rel="stylesheet" />
+    <link href="~/Content/style/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+    <link href="~/Content/style/jquery.cleditor.css" rel="stylesheet" />
+    <link href="~/Content/style/daterangepicker-bs3.css" rel="stylesheet" />
+    <link href="~/Content/style/bootstrap-switch.css" rel="stylesheet" />
+    <!-- Main stylesheet -->
+    <link href="~/Content/style/style.css" rel="stylesheet" />
+    <!-- Widgets stylesheet -->
+    <link href="~/Content/style/widgets.css" rel="stylesheet" />
+     
+    <!-- Gritter Notifications stylesheet -->
+    <link href="~/Content/style/jquery-jvectormap-1.2.2.css" rel="stylesheet" />
+    <link href="~/Content/style/jquery.gritter.css" rel="stylesheet" />
+    <link href="~/Content/style/jquery.easy-pie-chart.css" rel="stylesheet" />
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="img/favicon/favicon.png">
+  </head>
+    <body>
+<header>
+<div class="navbar navbar-fixed-top bs-docs-nav" role="banner">
+  
+    <div class="container">
+      <!-- Menu button for smallar screens -->
+      <div class="navbar-header">
+		  <button class="navbar-toggle btn-navbar" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse"><span>Menu</span></button>
+      <a href="#" class="pull-left menubutton hidden-xs"><i class="fa fa-bars"></i></a>
+		  <!-- Site name for smallar screens -->
+		  <a href="index.html" class="navbar-brand">Welcome Expert<span class="bold"></span></a>
+		</div>
+		
+      <!-- Navigation starts -->
+      <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">         
+        
+        <!-- Links -->
+        <ul class="nav navbar-nav pull-right">
+          <li class="dropdown pull-right user-data">            
+            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+              <img src="img/user1.png"> Jenifer  <span class="bold">Smith</span> <b class="caret"></b>              
+            </a>
+            
+            <!-- Dropdown menu -->
+            <ul class="dropdown-menu">
+              <li><a href="#"><i class="fa fa-user"></i> Profile</a></li>
+              <li><a href="#"><i class="fa fa-cogs"></i> Settings</a></li>
+              <li><a href="login.html"><i class="fa fa-key"></i> Logout</a></li>
+            </ul>
+          </li>
+          <!-- Upload to server link. Class "dropdown-big" creates big dropdown -->
+          <li class="dropdown dropdown-big leftonmobile">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-cloud-upload"></i></a>
+            <!-- Dropdown -->
+            <ul class="dropdown-menu">
+              <li>
+                <!-- Using "fa fa-spin" class to rotate icon. -->
+                <p><span class="label label-info"><i class="fa fa-cloud"></i></span> Syncing Photos to Server</p>
+                <hr />
+                <p><span class="label label-warning"><i class="fa fa-cloud"></i></span> Syncing Bookmarks Lists to Cloud</p>
+
+                <hr />
+
+                <!-- Dropdown menu footer -->
+                <div class="drop-foot">
+                  <a href="#">View All</a>
+                </div>
+
+              </li>
+            </ul>
+          </li>
+
+          <!-- Sync to server link -->
+          <li class="dropdown dropdown-big leftonmobile">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-refresh"></i></a>
+            <!-- Dropdown -->
+			<ul class="dropdown-menu">
+              <li>
+                <!-- Progress bar -->
+                <p>Photo Upload in Progress</p>
+                <!-- Bootstrap progress bar -->
+                <div class="progress progress-striped active">
+					<div class="progress-bar progress-bar-info"  role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="20" style="width: 40%">
+						<span class="sr-only">40% Complete</span>
+					</div>
+			    </div>
+
+                <hr />
+
+                <!-- Progress bar -->
+                <p>Video Upload in Progress</p>
+                <!-- Bootstrap progress bar -->
+                <div class="progress progress-striped active">
+					<div class="progress-bar progress-bar-success"  role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="20" style="width: 80%">
+						<span class="sr-only">80% Complete</span>
+					</div>
+			    </div> 
+
+                <hr />             
+
+                <!-- Dropdown menu footer -->
+                <div class="drop-foot">
+                  <a href="#">View All</a>
+                </div>
+
+              </li>
+            </ul>
+            
+          </li>
+          <li class="dropdown dropdown-big leftonmobile">
+              <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+                <i class="fa fa-comments"></i><span class="label label-info">6</span> 
+              </a>
+
+                <ul class="dropdown-menu">
+                  <li class="dropdown-header padless">
+                    <!-- Heading - h5 -->
+                    <h5><i class="fa fa-comments"></i> Chats</h5>
+                    <!-- Use hr tag to add border -->                   
+                  </li>
+                  <li>
+                    <hr />
+                    <!-- List item heading h6 -->
+                    <h6><a href="#">Hi :)</a> <span class="label label-warning pull-right">2:42</span></h6>
+                    <div class="clearfix"></div>
+                    <hr />
+                  </li>
+                  <li>
+                    <h6><a href="#">How are you?</a> <span class="label label-warning pull-right">20:42</span></h6>
+                    <div class="clearfix"></div>
+                    <hr />
+                  </li>
+                  <li>
+                    <h6><a href="#">What are you doing?</a> <span class="label label-warning pull-right">14:42</span></h6>
+                    <div class="clearfix"></div>
+                    <hr />
+                  </li>                  
+                  <li>
+                    <div class="drop-foot">
+                      <a href="#">View All</a>
+                    </div>
+                  </li>                                    
+                </ul>
+            </li>
+            
+            <!-- Message button with number of latest messages count-->
+            <li class="dropdown dropdown-big messages-dd leftonmobile">
+              <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+                <i class="fa fa-envelope-o"></i> <span class="label label-primary">3</span> 
+              </a>
+
+                <ul class="dropdown-menu">
+                  <li class="dropdown-header padless1">
+                    <!-- Heading - h5 -->
+                    <h5><i class="fa fa-envelope"></i> Messages</h5>
+                    <!-- Use hr tag to add border -->
+                    
+                  </li>
+                  <li>
+                    <hr /><!-- List item heading h6 -->
+                    <h6><a href="#">Hello how are you?</a></h6>
+                    <!-- List item para -->
+                    <p>Quisque eu consectetur erat eget  semper...</p>
+                    <hr />
+                  </li>
+                  <li>
+                    <h6><a href="#">Today is wonderful?</a></h6>
+                    <p>Quisque eu consectetur erat eget  semper...</p>
+                    <hr />
+                  </li>
+                  <li>
+                    <div class="drop-foot">
+                      <a href="#">View All</a>
+                    </div>
+                  </li>                                    
+                </ul>
+            </li>
+
+            <!-- Members button with number of latest members count -->
+            <li class="dropdown dropdown-big">
+              <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+                <i class="fa fa-user"></i> <span class="label label-success">7</span> 
+              </a>
+
+                <ul class="dropdown-menu">
+                  <li class="dropdown-header padless2">
+                    <!-- Heading - h5 -->
+                    <h5><i class="fa fa-user"></i> Users</h5>
+                    <!-- Use hr tag to add border -->                    
+                  </li>
+                  <li>
+                    <hr />
+                    <!-- List item heading h6-->
+                    <h6><a href="#">Jenifer Smith</a> <span class="label label-warning pull-right">Free</span></h6>
+                    <div class="clearfix"></div>
+                    <hr />
+                  </li>
+                  <li>
+                    <h6><a href="#">Iron Man</a> <span class="label label-important pull-right">Premium</span></h6>
+                    <div class="clearfix"></div>
+                    <hr />
+                  </li>
+                  <li>
+                    <h6><a href="#">Salamander</a> <span class="label label-warning pull-right">Free</span></h6>
+                    <div class="clearfix"></div>
+                    <hr />
+                  </li>                  
+                  <li>
+                    <div class="drop-foot">
+                      <a href="#">View All</a>
+                    </div>
+                  </li>                                    
+                </ul>
+            </li> 
+        </ul>
+      </nav>
+
+    </div>
+  </div>
+</header>
+<!-- Main content starts -->
+
+<div class="content">
+
+  	<!-- Sidebar -->
+		
+    <div class="sidebar">
+        <div class="sidebar-dropdown"><a href="#">Navigation</a></div>
+        <!-- Search form -->
+        <form class="navbar-form" role="search">
+    			<div class="form-group">
+    				<input type="text" class="form-control" placeholder="Search">
+            <button class="btn search-button" type="submit"><i class="fa fa-search"></i></button>
+    			</div>
+    	</form>
+        <!--- Sidebar navigation -->
+        <!-- If the main navigation has sub navigation, then add the class "has_sub" to "li" of main navigation. -->
+        <ul id="nav">
+          <!-- Main menu with font awesome icon -->
+          <li><a href="index.html" class="open"><i class="fa fa-laptop"></i> <span>Dashboard</span></a></li>
+          <li><a href="forms.html"><i class="fa fa-tasks"></i> <span>Profile</span></a></li>
+          <li><a href="diagnose.html"><i class="fa fa-magic"></i> <span>Perform Diagnosis</span></a></li>
+          <li class="has_sub"><a href="#"><i class="fa fa-envelope"></i> <span>Register Users</span> <span class="pull-right"><i class="fa fa-chevron-right"></i></span></a>
+            <ul>
+              <li>@Html.ActionLink("Admin", "Create", "AdminHome", new { area ="AdminSection" }, null)</li>
+              <li>@Html.ActionLink("Expert", "Create", "ExpertHome", new { area ="ExpertSection" }, null)</li>
+              <li>@Html.ActionLink("User", "Create", "UserHome", new { area ="UserSection" }, null)</li>
+            </ul>
+          </li>  
+          <li class="has_sub"><a href="#"><i class="fa fa-envelope"></i> <span>Manage Accounts</span> <span class="pull-right"><i class="fa fa-chevron-right"></i></span></a>
+            <ul>
+              <li>@Html.ActionLink("Admin", "ManageAdmin","AdminHome", new { area ="AdminSection" }, null)</li>
+              <li>@Html.ActionLink("Expert", "ManageAccount")</li>
+              <li><a href="widgets2.html">Farmer/user</a></li>
+            </ul>
+          </li>  
+		  <li class="has_sub"><a href="#"><i class="fa fa-envelope"></i> <span>Manage Animals</span> <span class="pull-right"><i class="fa fa-chevron-right"></i></span></a>
+            <ul>
+              <li><a href="widgets1.html">Add Animal</a></li>
+              <li><a href="widgets2.html">View Animal</a></li>
+            </ul>
+          </li>  
+      <li><a href="ui.html"><i class="fa fa-magic"></i> <span>Update Knowledge Base</span></a></li>
+      <li><a href="ui.html"><i class="fa fa-magic"></i> <span>Previous Diagnosis</span></a></li>
+      <li><a href="ui.html"><i class="fa fa-magic"></i> <span>Manage Animals</span></a></li>
+		  <li><a href="calendar.html"><i class="fa fa-user"></i> <span>Log Out</span></a></li>
+          
+         
+          
+		 
+          </li>
+        </ul>
+    </div>
+    <!-- Sidebar ends -->
+    </div>
+
+  	<!-- Main bar -->
+  	<div class="mainbar">
+      
+	    <!-- Page heading -->
+	    <div class="page-head">
+	      <h2 class="pull-left"></h2>
+        <div class="clearfix"></div>
+        <!-- Breadcrumb -->
+        <div class="bread-crumb">
+          <a href="index.html"><i class="fa fa-home"></i> Home</a> 
+          <!-- Divider -->
+          <span class="divider">/</span> 
+          <a href="#" class="bread-current">Register an expert</a>
+        </div>
+        
+        <div class="clearfix"></div>
+
+	    </div>
+	    <!-- Page heading ends -->
+	
+	    <!-- Matter -->
+
+	  <div class="matter">
+        <div class="container">
+
+          <!-- Table -->
+
+            <div class="row">
+
+              <div class="col-md-12">
+
+                <div class="widget">
+
+                <div class="widget-head">
+                  <div class="pull-left">Tables</div>
+                  <div class="widget-icons pull-right">
+                    <a href="#" class="wminimize"><i class="fa fa-chevron-up"></i></a>
+                    <a href="#" class="wsettings"><i class="fa fa-wrench"></i></a>  
+                    <a href="#" class="wclose"><i class="fa fa-times"></i></a>
+                  </div>  
+                  <div class="clearfix"></div>
+                </div>
+
+                  <div class="widget-content">
+                     @Html.ActionLink("Create New", "Create")
+                    <table class="table table-striped table-bordered table-hover">
+                      <thead>
+                        <tr>
+                          <th>#</th>
+                          <th> First Name</th>
+                          <th>Middle Name</th>
+                          <th>Last Name</th>
+                          <th>e-mail</th>
+                          <th>Username</th>
+                          <th>Phone Number</th>
+                          <th></th>
+                          
+                        </tr>
+                      </thead>
+        
+                    @{
+                        int counter = 1;
+                     }
+
+                      <tbody>
+                    @foreach (var item in Model){
+                                            
+                        <tr>
+                          <td>@(counter++)</td>
+                          <td>@Html.DisplayFor(modelItem => item.fName)</td>
+                          <td>@Html.DisplayFor(modelItem => item.mName)</td>
+                          <td>@Html.DisplayFor(modelItem => item.lName)</td>
+                          <td>@Html.DisplayFor(modelItem => item.eMail)</td>
+                          <td>@Html.DisplayFor(modelItem => item.username)</td>
+                          <td>@Html.DisplayFor(model => item.phoneNumber)</td>
+                          <td>  @Html.ActionLink("Edit", "Edit", new { id=item.expertId }) |
+                                @Html.ActionLink("Details", "Details", new { id=item.expertId }) |
+                                @Html.ActionLink("Delete", "Delete", new { id=item.expertId })</td>
+                        </tr>
+                                                                      
+                     }
+                    </tbody>
+                    </table>
+
+                    <div class="widget-foot">
+
+                      
+                        <ul class="pagination pull-right">
+                          <li><a href="#">Prev</a></li>
+                          <li><a href="#">1</a></li>
+                          <li><a href="#">2</a></li>
+                          <li><a href="#">3</a></li>
+                          <li><a href="#">4</a></li>
+                          <li><a href="#">Next</a></li>
+                        </ul>
+                      
+                      <div class="clearfix"></div> 
+
+                    </div>
+
+                  </div>
+                </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+        </table>
+       <!-- Mainbar ends -->
+      <div class="clearfix"></div>
+    </div>
+<!-- Content ends -->
+
+<!-- Footer starts -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+            <!-- Copyright info -->
+            <p class="copy">Copyright &copy; 2018 | <a href="#">Project</a> </p>
+      </div>
+    </div>
+  </div>
+</footer> 	
+
+<!-- Footer ends -->
+
+<!-- Scroll to top -->
+<span class="totop"><a href="#"><i class="fa fa-chevron-up"></i></a></span> 
+
+<!-- JS -->
+    <script src="~/Content/scripts/jquery.js"></script>
+    <script src="~/Content/scripts/bootstrap.js"></script>
+    <script src="~/Content/scripts/jquery-ui-1.9.2.custom.min.js"></script>
+    <script src="~/Content/scripts/fullcalendar.min.js"></script>
+    <script src="~/Content/scripts/jquery.rateit.min.js"></script>
+    <script src="~/Content/scripts/jquery.prettyPhoto.js"></script>
+
+<!-- Morris JS -->
+    <script src="~/Content/scripts/raphael-min.js"></script>
+    <script src="~/Content/scripts/morris.min.js"></script>
+
+<!-- jQuery Flot -->
+    <script src="~/Content/scripts/excanvas.min.js"></script>
+    <script src="~/Content/scripts/jquery.flot.js"></script>
+    <script src="~/Content/scripts/jquery.flot.resize.js"></script>
+    <script src="~/Content/scripts/jquery.flot.pie.js"></script>
+    <script src="~/Content/scripts/jquery.flot.stack.js"></script>
+
+<!-- jQuery Notification - Noty -->
+    <script src="~/Content/scripts/jquery.noty.js"></script><!-- jQuery Notify -->
+    <script src="~/Content/scripts/default.js"></script>
+    <script src="~/Content/scripts/bottom.js"></script>
+    <script src="~/Content/scripts/topRight.js"></script>
+    <script src="~/Content/scripts/top.js"></script>
+<!-- jQuery Notification ends -->
+
+<!-- Daterangepicker -->
+    <script src="~/Content/scripts/moment.js"></script>
+    <script src="~/Content/scripts/daterangepicker.js"></script>
+
+
+    <script src="~/Content/scripts/sparklines.js"></script>
+    <script src="~/Content/scripts/jquery.gritter.min.js"></script>
+    <script src="~/Content/scripts/jquery.cleditor.min.js"></script>
+    <script src="~/Content/scripts/bootstrap-datetimepicker.min.js"></script>
+    <script src="~/Content/scripts/jquery.slimscroll.min.js"></script>
+    <script src="~/Content/scripts/bootstrap-switch.min.js"></script>
+    <script src="~/Content/scripts/jquery.maskedinput.min.js"></script>
+    <script src="~/Content/scripts/dropzone.js"></script>
+    <script src="~/Content/scripts/filter.js"></script>
+    <script src="~/Content/scripts/custom.js"></script>
+    <script src="~/Content/scripts/charts.js"></script>
+    <script src="~/Content/scripts/jquery.easypiechart.min.js"></script>
+    <script src="~/Content/scripts/index.js"></script>
+    <script src="~/Content/scripts/jquery-jvectormap-1.2.2.min.js"></script>
+    <script src="~/Content/scripts/jquery-jvectormap-world-mill-en.js"></script>
+    <script src="~/Content/scripts/gdp-data.js"></script>
+
+<script type="text/javascript">
+
+    $(function () {
+
+        /* Bar Chart starts */
+
+        var d1 = [];
+        for (var i = 0; i <= 20; i += 1)
+            d1.push([i, parseInt(Math.random() * 30)]);
+
+        var d2 = [];
+        for (var i = 0; i <= 20; i += 1)
+            d2.push([i, parseInt(Math.random() * 30)]);
+
+
+        var stack = 0, bars = true, lines = false, steps = false;
+
+        function plotWithOptions() {
+            $.plot($("#bar-chart"), [d1, d2], {
+                series: {
+                    stack: stack,
+                    lines: { show: lines, fill: true, steps: steps },
+                    bars: { show: bars, barWidth: 0.8 }
+                },
+                grid: {
+                    borderWidth: 0, hoverable: true, color: "#777"
+                },
+                colors: ["#8c9f25", "#f28135"],
+                bars: {
+                    show: true,
+                    lineWidth: 0,
+                    fill: true,
+                    fillColor: { colors: [{ opacity: 0.9 }, { opacity: 0.8 }] }
+                }
+            });
+        }
+
+        plotWithOptions();
+
+        $(".stackControls input").click(function (e) {
+            e.preventDefault();
+            stack = $(this).val() == "With stacking" ? true : null;
+            plotWithOptions();
+        });
+        $(".graphControls input").click(function (e) {
+            e.preventDefault();
+            bars = $(this).val().indexOf("Bars") != -1;
+            lines = $(this).val().indexOf("Lines") != -1;
+            steps = $(this).val().indexOf("steps") != -1;
+            plotWithOptions();
+        });
+
+        /* Bar chart ends */
+
+    });
+
+
+    /* Curve chart starts */
+
+    $(function () {
+        var sin = [], cos = [];
+        for (var i = 0; i < 14; i += 0.5) {
+            sin.push([i, Math.sin(i)]);
+            cos.push([i, Math.cos(i)]);
+        }
+
+        var plot = $.plot($("#curve-chart"),
+               [{ data: sin, label: "sin(x)" }, { data: cos, label: "cos(x)" }], {
+                   series: {
+                       lines: { show: true, fill: true },
+                       points: { show: true }
+                   },
+                   grid: { hoverable: true, clickable: true, borderWidth: 0 },
+                   yaxis: { min: -1.2, max: 1.2 },
+                   colors: ["#238C00", "#664D00"]
+               });
+
+        function showTooltip(x, y, contents) {
+            $('<div id="tooltip">' + contents + '</div>').css({
+                position: 'absolute',
+                display: 'none',
+                top: y + 5,
+                left: x + 5,
+                border: '1px solid #000',
+                padding: '2px 8px',
+                color: '#ccc',
+                'background-color': '#000',
+                opacity: 0.9
+            }).appendTo("body").fadeIn(200);
+        }
+
+        var previousPoint = null;
+        $("#curve-chart").bind("plothover", function (event, pos, item) {
+            $("#x").text(pos.x.toFixed(2));
+            $("#y").text(pos.y.toFixed(2));
+
+            if ($("#enableTooltip:checked").length > 0) {
+                if (item) {
+                    if (previousPoint != item.dataIndex) {
+                        previousPoint = item.dataIndex;
+
+                        $("#tooltip").remove();
+                        var x = item.datapoint[0].toFixed(2),
+                            y = item.datapoint[1].toFixed(2);
+
+                        showTooltip(item.pageX, item.pageY,
+                                    item.series.label + " of " + x + " = " + y);
+                    }
+                }
+                else {
+                    $("#tooltip").remove();
+                    previousPoint = null;
+                }
+            }
+        });
+
+        $("#curve-chart").bind("plotclick", function (event, pos, item) {
+            if (item) {
+                $("#clickdata").text("You clicked point " + item.dataIndex + " in " + item.series.label + ".");
+                plot.highlight(item.series, item.datapoint);
+            }
+        });
+
+    });
+
+    /* Curve chart ends */
+
+    var initCharts = function () {
+        var charts = $('.percentage');
+        charts.easyPieChart({
+            animate: 200,
+            onStep: function (from, to, percent) {
+                $(this.el).find('.percent').text(Math.round(percent));
+            }
+        });
+        $('.updatePieCharts').on('click', function (e) {
+            e.preventDefault();
+            charts.each(function () {
+                $(this).data('easyPieChart').update(Math.floor(20 * Math.random()));
+            });
+        });
+    }
+
+    /* Realtime chart starts */
+
+    $(function () {
+        initCharts();
+        Morris.Line({
+            element: 'morris1',
+            data: [
+              { y: '2006', a: 20, b: 90 },
+              { y: '2007', a: 75, b: 65 },
+              { y: '2008', a: 50, b: 40 },
+              { y: '2009', a: 75, b: 65 },
+              { y: '202', a: 50, b: 40 },
+              { y: '2011', a: 75, b: 65 },
+              { y: '2012', a: 20, b: 90 }
+            ],
+            xkey: 'y',
+            ykeys: ['a', 'b'],
+            labels: ['Series A', 'Series B']
+        });
+
+        Morris.Area({
+            element: 'morris2',
+            data: [
+              { period: '202 Q1', iphone: 2666, ipad: null, itouch: 2647 },
+              { period: '202 Q2', iphone: 2778, ipad: 2294, itouch: 2441 },
+              { period: '202 Q3', iphone: 4912, ipad: 1969, itouch: 2501 },
+              { period: '202 Q4', iphone: 3767, ipad: 3597, itouch: 5689 },
+              { period: '2011 Q1', iphone: 682, ipad: 1914, itouch: 2293 },
+              { period: '2011 Q2', iphone: 5670, ipad: 4293, itouch: 1881 },
+              { period: '2011 Q3', iphone: 4820, ipad: 3795, itouch: 1588 },
+              { period: '2011 Q4', iphone: 15073, ipad: 5967, itouch: 5175 },
+              { period: '2012 Q1', iphone: 2687, ipad: 4460, itouch: 2028 },
+              { period: '2012 Q2', iphone: 8432, ipad: 5713, itouch: 1791 }
+            ],
+            xkey: 'period',
+            ykeys: ['iphone', 'ipad', 'itouch'],
+            labels: ['iPhone', 'iPad', 'iPod Touch'],
+            pointSize: 2,
+            hideHover: 'auto'
+        });
+
+        Morris.Bar({
+            element: 'morris3',
+            data: [
+              { y: '2006', a: 20, b: 90 },
+              { y: '2007', a: 75, b: 65 },
+              { y: '2008', a: 50, b: 40 },
+              { y: '2009', a: 75, b: 65 },
+              { y: '202', a: 50, b: 40 },
+              { y: '2011', a: 75, b: 65 },
+              { y: '2012', a: 20, b: 90 }
+            ],
+            xkey: 'y',
+            ykeys: ['a', 'b'],
+            labels: ['Series A', 'Series B']
+        });
+
+        Morris.Donut({
+            element: 'morris4',
+            data: [
+              { label: 'Jam', value: 25 },
+              { label: 'Frosted', value: 40 },
+              { label: 'Custard', value: 25 },
+              { label: 'Sugar', value: 2 }
+            ],
+            formatter: function (y) { return y + "%" }
+        });
+
+        // we use an inline data source in the example, usually data would
+        // be fetched from a server
+        var data = [], totalPoints = 300;
+        function getRandomData() {
+            if (data.length > 0)
+                data = data.slice(1);
+
+            // do a random walk
+            while (data.length < totalPoints) {
+                var prev = data.length > 0 ? data[data.length - 1] : 50;
+                var y = prev + Math.random() * 2 - 5;
+                if (y < 2)
+                    y = 2;
+                if (y > 70)
+                    y = 70;
+                data.push(y);
+            }
+
+            // zip the generated y values with the x values
+            var res = [];
+            for (var i = 0; i < data.length; ++i)
+                res.push([i, data[i]])
+            return res;
+        }
+
+        // setup control widget
+        var updateInterval = 300;
+        $("#updateInterval").val(updateInterval).change(function () {
+            var v = $(this).val();
+            if (v && !isNaN(+v)) {
+                updateInterval = +v;
+                if (updateInterval < 1)
+                    updateInterval = 1;
+                if (updateInterval > 2000)
+                    updateInterval = 2000;
+                $(this).val("" + updateInterval);
+            }
+        });
+
+        // setup plot
+        var options = {
+            series: { shadowSize: 0 }, // drawing is faster without shadows
+            lines: { fill: true },
+            grid: { borderWidth: 0 },
+            yaxis: { min: 0, max: 20 },
+            colors: ["#ff2424"]
+        };
+        var plot = $.plot($("#live-chart"), [getRandomData()], options);
+
+        function update() {
+            plot.setData([getRandomData()]);
+            // since the axes don't change, we don't need to call plot.setupGrid()
+            plot.draw();
+
+            setTimeout(update, updateInterval);
+        }
+
+        update();
+    });
+
+    /* Realtime charts ends */
+
+    /* Pie chart starts */
+
+    $(function () {
+
+        var data = [];
+        var series = Math.floor(Math.random() * 2) + 1;
+        for (var i = 0; i < series; i++) {
+            data[i] = { label: "Series" + (i + 1), data: Math.floor(Math.random() * 20) + 1 }
+        }
+
+        $.plot($("#pie-chart"), data,
+        {
+            series: {
+                pie: {
+                    show: true,
+                    radius: 1,
+                    label: {
+                        show: true,
+                        radius: 3 / 4,
+                        formatter: function (label, series) {
+                            return '<div style="font-size:8pt;text-align:center;padding:2px;color:white;">' + label + '<br/>' + Math.round(series.percent) + '%</div>';
+                        },
+                        background: { opacity: 0 }
+                    }
+                }
+            },
+            grid: { hoverable: true },
+            legend: {
+                show: false
+            }
+        });
+
+        $.plot($("#pie-chart2"), data,
+        {
+            series: {
+                pie: {
+                    show: true
+                }
+            },
+            grid: { hoverable: true }
+        });
+
+
+        $.plot($("#pie-chart3"), data,
+        {
+            series: {
+                pie: {
+                    show: true
+                }
+            },
+            grid: { hoverable: true },
+            legend: {
+                show: false
+            }
+        });
+
+        /* Pie chart ends */
+    });
+
+   
+</script>
+</body>
+</html>
+
+
+
+
+

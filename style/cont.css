@@ -1,0 +1,11 @@
+﻿body {
+}
+
+col-md-12 > widget {
+    width:inherit;
+
+}
+
+.myBtn {
+    padding: 10px;
+}

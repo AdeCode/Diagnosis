@@ -1,0 +1,64 @@
+﻿@model diagnosis.Models.user
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>user</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.fName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.fName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.mName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.mName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.lName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.lName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.eMail)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.eMail)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.phoneNumber)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.phoneNumber)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.username)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.username)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.password)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.password)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.userId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
